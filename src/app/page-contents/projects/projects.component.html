@@ -1,0 +1,251 @@
+<!-- projects.component.html -->
+<div class="projects-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="projects-header">
+      <h1 class="page-title">{{ projectData.pageTitle }}</h1>
+      <p class="page-description">{{ projectData.pageDescription }}</p>
+
+      <div class="filter-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Kategori Filtrele</mat-label>
+          <mat-select
+            [(value)]="selectedCategory"
+            (selectionChange)="filterProjects()"
+          >
+            <mat-option value="all">Tümü</mat-option>
+            <mat-option
+              *ngFor="let category of projectData.categories"
+              [value]="category"
+              >{{ category }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Arama</mat-label>
+          <input
+            matInput
+            placeholder="Proje ara..."
+            [(ngModel)]="searchText"
+            (keyup)="filterProjects()"
+          />
+          <button
+            *ngIf="searchText"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="searchText = ''; filterProjects()"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section
+    *ngIf="filteredProjects.featured.length > 0"
+    class="section featured-section"
+  >
+    <div class="section-header">
+      <mat-icon class="section-icon">stars</mat-icon>
+      <h2>{{ projectData.featuredHeader }}</h2>
+    </div>
+    <div class="section-content">
+      <div class="featured-projects-grid">
+        <div
+          *ngFor="let project of filteredProjects.featured"
+          class="featured-project-card"
+        >
+          <div
+            class="project-image"
+            [style.background-image]="'url(' + project.imageUrl + ')'"
+          ></div>
+          <div class="project-content">
+            <div class="project-category-badge">{{ project.category }}</div>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+
+            <div class="project-tech-stack">
+              <span
+                *ngFor="let tech of project.technologies"
+                class="tech-tag"
+                >{{ tech }}</span
+              >
+            </div>
+
+            <div class="project-details">
+              <div class="detail-item">
+                <mat-icon>calendar_today</mat-icon>
+                <span>{{ project.completionDate }}</span>
+              </div>
+              <div *ngIf="project.contributors" class="detail-item">
+                <mat-icon>group</mat-icon>
+                <span>{{ project.contributors }} katkıda bulunan</span>
+              </div>
+            </div>
+
+            <div class="project-links">
+              <a
+                [href]="project.repoUrl"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+              >
+                <mat-icon>code</mat-icon>
+                Repo
+              </a>
+              <a
+                *ngIf="project.demoUrl"
+                [href]="project.demoUrl"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+              >
+                <mat-icon>visibility</mat-icon>
+                Demo
+              </a>
+              <a
+                *ngIf="project.docsUrl"
+                [href]="project.docsUrl"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+              >
+                <mat-icon>library_books</mat-icon>
+                Docs
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Projects Section -->
+  <section class="section">
+    <div class="section-header">
+      <mat-icon class="section-icon">widgets</mat-icon>
+      <h2>{{ projectData.allProjectsHeader }}</h2>
+    </div>
+
+    <div *ngIf="filteredProjects.all.length === 0" class="no-results">
+      <mat-icon>search_off</mat-icon>
+      <p>{{ projectData.noResultsText }}</p>
+      <button mat-raised-button color="primary" (click)="clearFilters()">
+        Filtreleri Temizle
+      </button>
+    </div>
+
+    <div *ngIf="filteredProjects.all.length > 0" class="section-content">
+      <div class="projects-list">
+        <mat-accordion>
+          <mat-expansion-panel
+            *ngFor="let project of filteredProjects.all"
+            [expanded]="project.expanded"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ project.title }}
+              </mat-panel-title>
+              <mat-panel-description>
+                <div class="project-category-badge small">
+                  {{ project.category }}
+                </div>
+                <div class="completion-date">{{ project.completionDate }}</div>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="project-panel-content">
+              <p class="project-description">{{ project.description }}</p>
+
+              <div class="project-tech-stack">
+                <span
+                  *ngFor="let tech of project.technologies"
+                  class="tech-tag"
+                  >{{ tech }}</span
+                >
+              </div>
+
+              <div
+                *ngIf="project.achievements && project.achievements.length > 0"
+                class="project-achievements"
+              >
+                <h4>Başarılar ve Özellikleri</h4>
+                <ul>
+                  <li *ngFor="let achievement of project.achievements">
+                    {{ achievement }}
+                  </li>
+                </ul>
+              </div>
+
+              <div class="project-links">
+                <a
+                  [href]="project.repoUrl"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  <mat-icon>code</mat-icon>
+                  Repo
+                </a>
+                <a
+                  *ngIf="project.demoUrl"
+                  [href]="project.demoUrl"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  <mat-icon>visibility</mat-icon>
+                  Demo
+                </a>
+                <a
+                  *ngIf="project.docsUrl"
+                  [href]="project.docsUrl"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  <mat-icon>library_books</mat-icon>
+                  Docs
+                </a>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="section stats-section">
+    <div class="section-header">
+      <mat-icon class="section-icon">insert_chart</mat-icon>
+      <h2>{{ projectData.stats.statsHeader }}</h2>
+    </div>
+    <div class="section-content">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">{{ projectData.stats.totalProjects }}</div>
+          <div class="stat-label">Toplam Proje</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">
+            {{ projectData.stats.totalContributors }}
+          </div>
+          <div class="stat-label">Katkıda Bulunanlar</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">{{ projectData.stats.githubStars }}</div>
+          <div class="stat-label">GitHub Yıldızları</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">{{ projectData.stats.totalDownloads }}</div>
+          <div class="stat-label">İndirme</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

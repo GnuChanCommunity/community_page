@@ -1,0 +1,51 @@
+<!-- header.component.html -->
+<mat-toolbar color="primary" class="header-toolbar">
+  <div class="container">
+    <a mat-button routerLink="/" class="logo-container">
+      <span class="logo">
+        <img
+          style="border-radius: 25px"
+          height="36px;"
+          src="profilephoto.ico"
+        />
+        <span style="padding: 5px" class="title">{{
+          headerData.brandName
+        }}</span>
+      </span>
+    </a>
+
+    <span class="spacer"></span>
+
+    <!-- Desktop Navigation -->
+    <div class="desktop-nav">
+      <a
+        mat-button
+        *ngFor="let link of headerData.menuItems"
+        [routerLink]="link.path"
+        routerLinkActive="active-link"
+      >
+        {{ link.label }}
+      </a>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      class="mobile-menu-button"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu" class="custom-menu">
+      <button
+        mat-menu-item
+        *ngFor="let link of headerData.menuItems"
+        [routerLink]="link.path"
+        class="menu-item"
+      >
+        <span class="menu-label">{{ link.label }}</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

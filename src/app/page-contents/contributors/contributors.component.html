@@ -1,0 +1,78 @@
+<section class="supporters-section">
+  <h2 class="mat-headline-4">{{ contributorsData.contributorsHeader }}</h2>
+  <p class="mat-body-1">{{ contributorsData.contributorsIntro }}</p>
+
+  <div class="supporters-grid">
+    <mat-card
+      class="supporter-card"
+      *ngFor="let supporter of contributorsData.contributors"
+    >
+      <mat-card-header>
+        <div mat-card-avatar class="avatar-container">
+          <img [src]="supporter.avatarUrl" [alt]="supporter.name" />
+        </div>
+        <mat-card-title>{{ supporter.name }}</mat-card-title>
+        <mat-card-subtitle>{{ supporter.role }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p class="mat-body-2">{{ supporter.bio }}</p>
+
+        <mat-chip-set>
+          <mat-chip
+            *ngFor="let tech of supporter.technologies"
+            color="primary"
+            selected
+          >
+            {{ tech }}
+          </mat-chip>
+        </mat-chip-set>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <a
+          *ngIf="supporter.githubUrl"
+          [href]="supporter.githubUrl"
+          target="_blank"
+          mat-icon-button
+          aria-label="GitHub"
+        >
+          <mat-icon>code</mat-icon>
+        </a>
+        <a
+          *ngIf="supporter.linkedinUrl"
+          [href]="supporter.linkedinUrl"
+          target="_blank"
+          mat-icon-button
+          aria-label="LinkedIn"
+        >
+          <mat-icon>business</mat-icon>
+        </a>
+        <a
+          *ngIf="supporter.personalUrl"
+          [href]="supporter.personalUrl"
+          target="_blank"
+          mat-icon-button
+          aria-label="Web"
+        >
+          <mat-icon>language</mat-icon>
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <mat-divider class="section-divider"></mat-divider>
+
+  <div class="join-section">
+    <h3 class="mat-headline-5">{{ contributorsData.joinTeamHeader }}</h3>
+    <p class="mat-body-1">{{ contributorsData.joinTeamText }}</p>
+    <a
+      mat-raised-button
+      color="primary"
+      [href]="contributorsData.joinTeamUrl"
+      target="_blank"
+    >
+      Destekçi Olun
+    </a>
+  </div>
+</section>

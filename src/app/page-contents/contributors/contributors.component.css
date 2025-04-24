@@ -1,0 +1,141 @@
+.supporters-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.supporters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.supporter-card {
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.supporter-card:hover {
+  transform: translateY(-4px);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.supporter-name {
+  font-size: 1.25rem;
+  margin: 0.25rem 0;
+}
+
+.supporter-role {
+  color: #007acc;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.supporter-bio {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.supporter-tags {
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background-color: #e0e0e0;
+  color: #333;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin: 0 5px 5px 0;
+  display: inline-block;
+}
+
+.supporter-links a {
+  margin: 0 8px;
+  font-size: 0.85rem;
+  color: #007acc;
+  text-decoration: none;
+}
+
+.supporter-links a:hover {
+  text-decoration: underline;
+}
+
+.join-section {
+  border-top: 1px solid #ddd;
+  padding-top: 2rem;
+}
+
+.join-button {
+  display: inline-block;
+  background-color: #007acc;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.join-button:hover {
+  background-color: #005f99;
+}
+.supporters-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.supporters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.supporter-card {
+  border-radius: 12px;
+}
+
+.avatar-container img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.section-divider {
+  margin: 3rem 0 2rem;
+}
+
+.join-section {
+  text-align: center;
+  margin-top: 2rem;
+}

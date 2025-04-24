@@ -1,0 +1,408 @@
+/* about-us.component.css */
+.about-container {
+  margin: 2rem 0;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  margin-bottom: 3rem;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(102, 0, 204, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  padding: 3rem 0;
+  border-radius: 8px;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.community-name {
+  color: #1f1975;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.community-tagline {
+  color: #4a4494;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.community-mission {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: #1f1975; /* Main theme blue */
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background-color: #4a4494; /* Lighter blue for hover */
+  transform: translateY(-2px);
+}
+
+.social-btn svg {
+  fill: white;
+}
+
+.discord-btn {
+  background-color: #5865f2;
+}
+
+.discord-btn:hover {
+  background-color: #7289da;
+}
+
+.twitter-btn {
+  background-color: #1da1f2;
+}
+
+.twitter-btn:hover {
+  background-color: #4db5f5;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #6600cc; /* Main theme blue */
+  padding-bottom: 0.75rem;
+}
+
+.section-icon {
+  color: #6600cc; /* Main theme blue */
+}
+
+.section-header h2 {
+  color: #333;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.section-content {
+  color: #444;
+  line-height: 1.6;
+}
+
+.section-content p {
+  margin-bottom: 1rem;
+}
+
+/* Values Section Styles */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.value-item {
+  background-color: rgba(31, 25, 117, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.value-item mat-icon {
+  font-size: 2.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: #1f1975;
+  margin-bottom: 1rem;
+}
+
+.value-title {
+  color: #1f1975;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+/* Team Section Styles */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.member-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 1rem;
+  border: 3px solid #6600cc;
+}
+
+.member-name {
+  color: #1f1975;
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+}
+
+.member-role {
+  color: #666;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+.member-social {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.member-social a {
+  color: #1f1975;
+  transition: all 0.3s ease;
+}
+
+.member-social a:hover {
+  color: #4a4494;
+  transform: translateY(-2px);
+}
+
+/* Projects Section Styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: rgba(31, 25, 117, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #1f1975;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  color: #1f1975;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.project-description {
+  margin-bottom: 1rem;
+}
+
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  background-color: rgba(31, 25, 117, 0.1);
+  color: #1f1975;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #1f1975;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  color: #4a4494;
+}
+
+/* Join Us Section Styles */
+.join-section {
+  background-color: rgba(31, 25, 117, 0.05);
+}
+
+.contribution-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.contribution-list li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  border-bottom: 1px dashed rgba(74, 68, 148, 0.2);
+}
+
+.contribution-list li:before {
+  content: "→";
+  color: #1f1975;
+  position: absolute;
+  left: 0;
+}
+
+.contribution-list li:last-child {
+  border-bottom: none;
+}
+
+.join-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.join-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #1f1975;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: #4a4494;
+  transform: translateY(-2px);
+}
+
+/* Contact Section Styles */
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contact-method mat-icon {
+  color: #1f1975;
+}
+
+.contact-method a {
+  color: #1f1975;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-method a:hover {
+  color: #4a4494;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .community-name {
+    font-size: 2.2rem;
+  }
+
+  .community-tagline {
+    font-size: 1.2rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .social-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .values-grid,
+  .team-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-buttons {
+    flex-direction: column;
+  }
+
+  .join-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
