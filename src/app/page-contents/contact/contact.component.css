@@ -1,0 +1,132 @@
+/* Define colors using CSS custom properties (variables) for easier management, */
+/* or replace them directly with hex codes if you prefer not to use variables. */
+:root {
+    --contact-primary-purple: #8e24aa; /* Main interactive purple */
+    --contact-secondary-purple: #6a1b9a; /* Text purple */
+    --contact-light-purple-bg: #f3e5f5; /* Light background purple */
+    --contact-lighter-purple: #ab47bc; /* Lighter accent purple */
+    --contact-border-purple: #e1bee7; /* Border/divider purple */
+    --contact-white: #ffffff;
+    --contact-text-on-dark: #ffffff; /* White text for dark backgrounds */
+    --contact-text-on-light: var(--contact-secondary-purple); /* Default text color */
+  }
+  
+  /* Style the component host element */
+  :host {
+    display: block; /* Ensures the component takes up space */
+    padding: 40px 0; /* Add vertical padding around the section */
+    background-color: var(--contact-light-purple-bg); /* Light purple background */
+  }
+  
+  .contact-section {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the section */
+    padding: 0 24px; /* Add horizontal padding */
+  }
+  
+  .contact-card {
+    background-color: var(--contact-white);
+    color: var(--contact-text-on-light);
+    border-radius: 16px;
+    border: 1px solid var(--contact-border-purple);
+    /* Soft purple shadow: rgba for #8e24aa (142, 36, 170) */
+    box-shadow: 0 2px 8px rgba(142, 36, 170, 0.1);
+  }
+  
+  .contact-card mat-card-header {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--contact-border-purple); /* Separator below header */
+    margin-bottom: 16px;
+  }
+  
+  .contact-card mat-card-header mat-card-title {
+    color: var(--contact-primary-purple);
+    font-size: 1.5em; /* Larger title */
+  }
+  
+  .contact-card mat-card-header mat-card-subtitle {
+    color: var(--contact-lighter-purple);
+  }
+  
+  .contact-card mat-card-content {
+    padding-top: 16px; /* Space above the list */
+  }
+  
+  .contact-card mat-list-item {
+    color: var(--contact-text-on-light);
+    /* You might need more specific selectors if Angular Material adds intermediate elements */
+  }
+  
+  /* Target icons within list items specifically */
+  .contact-card mat-list-item .mat-icon {
+    color: var(--contact-primary-purple); /* Use the main purple for list icons */
+  }
+  
+  .contact-card mat-list-item a {
+    color: var(--contact-primary-purple);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-card mat-list-item a:hover {
+    color: var(--contact-lighter-purple);
+    text-decoration: underline;
+  }
+  
+  .contact-card .contact-divider {
+    margin: 24px 0;
+    background-color: var(--contact-border-purple);
+    border: none; /* Ensure it's just a background line */
+    height: 1px; /* Explicit height */
+  }
+  
+  .contact-card .social-title {
+    color: var(--contact-primary-purple);
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+  
+  .contact-card .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px; /* Space between icons */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  /* Style the icon button links */
+  .contact-card .social-links a[mat-icon-button] {
+    /* Default color often comes from theme, this ensures consistency */
+     color: var(--contact-primary-purple);
+  }
+  
+  /* Style the icon inside the button */
+  .contact-card .social-links a[mat-icon-button] .mat-icon {
+    font-size: 48px; /* Slightly larger icons */
+    width: 28px;
+    height: 28px;
+    color: var(--contact-primary-purple); /* Ensure icon color is correct */
+    transition: color 0.3s ease;
+    vertical-align: middle; /* Helps align SVG icons better */
+  }
+  
+  /* Change icon color on hover */
+  .contact-card .social-links a[mat-icon-button]:hover .mat-icon {
+    color: var(--contact-lighter-purple);
+  }
+  
+  /* Optional: add a subtle background on hover */
+  .contact-card .social-links a[mat-icon-button]:hover {
+     /* rgba for #8e24aa (142, 36, 170) */
+    background-color: rgba(142, 36, 170, 0.08);
+  }
+  
+  /* Responsive adjustments if needed */
+  /*
+  @media (max-width: 600px) {
+    .contact-card mat-card-header mat-card-title {
+      font-size: 1.3em;
+    }
+  }
+  */

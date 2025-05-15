@@ -8,17 +8,19 @@ import { Injectable } from "@angular/core";
 })
 export class UniversalDataProvider {
   // Social media URLs
-  private readonly _githubUrl: string = "https://github.com/yourusername";
+  private readonly _githubUrl: string = "https://github.com/GnuChanCommunity";
   private readonly _linkedinUrl: string = "https://linkedin.com/in/yourprofile";
   private readonly _twitterUrl: string = "https://twitter.com/yourhandle";
-  private readonly _discordUrl: string = "https://discord.com/yourdiscord";
+  private readonly _discordUrl: string = "https://app.revolt.chat/server/01J9RWW0CVA8GA1BR6ZRYPVN5F/channel/01J9RWW0CVY9YF01YC6PE78JGZ";
+  private readonly _youtubeUrl: string = "https://www.youtube.com/@GnuChanOS";
 
   // Contact information
-  private readonly _contactEmail: string = "contact@example.com";
-  private readonly _contactPhone: string = "+1 (123) 456-7890";
+  private readonly _contactEmail: string = "gnuchancommunity@proton.me";
+  private readonly _contactPhone: string = "no_phone_number";
+  private readonly _revoltAdress: string = "https://app.revolt.chat/server/01J9RWW0CVA8GA1BR6ZRYPVN5F/channel/01J9RWW0CVY9YF01YC6PE78JGZ";
 
   // Company or personal website
-  private readonly _websiteUrl: string = "https://example.com";
+  private readonly _websiteUrl: string = "https://gnuchancommunity.github.io";
 
   // Portfolio or resume link
   private readonly _portfolioUrl: string = "https://example.com/portfolio";
@@ -31,7 +33,13 @@ export class UniversalDataProvider {
   private readonly _appName: string = "Your Application Name";
   private readonly _appVersion: string = "1.0.0";
 
+  private readonly _donateUrl: string = "https://www.oyunfor.com/donate/gnuchanos";
+ 
+
   // Getters for accessing the data
+  get youtubeUrl(): string {
+    return this._youtubeUrl;
+  }
   get githubUrl(): string {
     return this._githubUrl;
   }
@@ -53,6 +61,10 @@ export class UniversalDataProvider {
 
   get contactPhone(): string {
     return this._contactPhone;
+  }
+
+  get revoltAdress(): string {
+    return this._revoltAdress;
   }
 
   get websiteUrl(): string {
@@ -79,11 +91,16 @@ export class UniversalDataProvider {
     return this._appVersion;
   }
 
+  get donateUrl(): string {
+    return this._donateUrl;
+  }
+
   /**
    * Returns all social media URLs as an object
    */
   getAllSocialLinks(): Record<string, string> {
     return {
+      youtube: this.youtubeUrl,
       github: this._githubUrl,
       linkedin: this._linkedinUrl,
       twitter: this._twitterUrl,

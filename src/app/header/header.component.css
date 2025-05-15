@@ -87,3 +87,45 @@
     display: block;
   }
 }
+
+/* Add these styles to header.component.css */
+
+/* Make all text in the toolbar white */
+.header-toolbar {
+  color: white;
+}
+
+/* Ensure the brand name is white */
+.logo .title {
+  color: white;
+}
+
+/* Make all navigation links white */
+.desktop-nav a {
+  color: white !important;
+}
+
+/* Make active link have a white underline or indicator */
+.desktop-nav a.active-link {
+  color: white !important;
+  border-bottom: 2px solid white;
+}
+
+/* Make mobile menu button white */
+.mobile-menu-button {
+  color: white;
+}
+
+/* Optional: Make the dropdown menu items have proper contrast */
+.menu-item .menu-label {
+  color: rgba(0, 0, 0, 0.87); /* Keep dark text in dropdown for readability */
+}
+
+/* Make sure Angular Material doesn't override our styles */
+::ng-deep .mat-mdc-button {
+  color: inherit;
+}
+
+::ng-deep .mat-mdc-button .mdc-button__label {
+  color: inherit;
+}

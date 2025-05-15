@@ -6,17 +6,18 @@ import { IAboutUsData } from "../models/i-aboutus-data";
  */
 @Injectable()
 export class AboutUsDataEnService implements IAboutUsData {
-  communityName: string = "Open Source Community";
-  communityTagline: string = "Building the future, together";
+  communityName: string = "GnuChan Community";
+  communityTagline: string = "Building the Turkish open-source ecosystem together through our shared projects.";
   missionStatement: string =
-    "To create accessible, innovative software solutions that empower developers and users around the world.";
+    "To create accessible, innovative, and effective software solutions for developers and users around the world.";
 
   storyHeader: string = "Our Story";
   storyParagraphs: Array<string> = [
-    "Founded in 2020, our community began as a small group of passionate developers who believed in the power of open collaboration.",
-    "What started as a weekend project among friends quickly grew into a global community of contributors, all united by our shared vision.",
-    "Today, we're proud to have members from over 30 countries, working together to build tools that make technology more accessible and powerful for everyone.",
-    "Our journey has been defined by the principles of transparency, inclusivity, and excellence in everything we create.",
+    "Our community was founded in 2025 by a group of developers who met through YouTube and decided to collaborate.",
+    "Our very first project was a game called 'The Arena: Last Shooter', which we released independently on Itch.io. It was the first tangible result of our shared passion.",
+    "The founding members of the team are still with us today, forming the core of our developer group—bonded by both code and friendship.",
+    "As we continued working together, we realized that passion projects can be more than hobbies—they can become a sustainable way of life.",
+    "Now, we are committed to promoting open-source culture and developer collaboration across Türkiye, aiming to build an inclusive ecosystem where anyone can contribute."
   ];
 
   valuesHeader: string = "Our Core Values";
@@ -28,38 +29,33 @@ export class AboutUsDataEnService implements IAboutUsData {
     {
       icon: "fa-lightbulb",
       title: "Innovation",
-      description:
-        "We constantly push boundaries and explore new approaches to solving complex problems.",
+      description: "We constantly push boundaries and explore new approaches to solve complex problems.",
     },
     {
       icon: "fa-users",
       title: "Collaboration",
-      description:
-        "We believe the best solutions emerge when diverse minds work together toward common goals.",
+      description: "We believe the best solutions come from diverse minds working toward a shared goal.",
     },
     {
       icon: "fa-lock-open",
       title: "Openness",
-      description:
-        "We embrace transparency in our code, our processes, and our community interactions.",
+      description: "We embrace transparency in our code, processes, and community interactions.",
     },
     {
       icon: "fa-universal-access",
       title: "Inclusivity",
-      description:
-        "We're committed to creating a welcoming environment for developers of all backgrounds and skill levels.",
+      description: "We are committed to creating a welcoming space for developers of all backgrounds and skill levels.",
     },
     {
       icon: "fa-certificate",
       title: "Quality",
-      description:
-        "We maintain high standards in our code, documentation, and community support.",
+      description: "We uphold high standards in our code, documentation, and community support.",
     },
   ];
 
-  teamHeader: string = "Meet Our Team";
+  teamHeader: string = "Meet the Team";
   teamIntro: string =
-    "Our community is led by a dedicated team of volunteers who contribute their time and expertise to guide our projects and nurture our growing community.";
+    "Our community is led by a group of dedicated volunteers who contribute their time and expertise to guide our projects and support our growing community.";
   teamMembers: Array<{
     name: string;
     role: string;
@@ -69,52 +65,36 @@ export class AboutUsDataEnService implements IAboutUsData {
     twitterUrl: string;
   }> = [
     {
-      name: "Alex Johnson",
-      role: "Community Lead",
-      avatarUrl: "/assets/images/team/alex.jpg",
-      githubUrl: "https://github.com/alexj",
-      linkedinUrl: "https://linkedin.com/in/alexjohnson",
-      twitterUrl: "https://twitter.com/alexj",
+      name: "Kubilay Yalçın",
+      role: "Community Leader, 3D Modeling, Game Developer",
+      avatarUrl: "developer-profile-photos/kubi.png",
+      githubUrl: "https://github.com/gnuchanos",
+      linkedinUrl: "https://www.linkedin.com/in/kubilay-yalcin-5b0233292/",
+      twitterUrl: "",
     },
     {
-      name: "Maria Garcia",
-      role: "Technical Lead",
-      avatarUrl: "/assets/images/team/maria.jpg",
-      githubUrl: "https://github.com/mariagarcia",
-      linkedinUrl: "https://linkedin.com/in/mariagarcia",
-      twitterUrl: "https://twitter.com/mariagarcia",
+      name: "Akif Esad Tosun",
+      role: "Tech Lead, Web Developer, Game Developer",
+      avatarUrl: "developer-profile-photos/akif.jpg",
+      githubUrl: "https://github.com/Akif-jpg",
+      linkedinUrl: "https://www.linkedin.com/in/akif-tosun-81b205340/",
+      twitterUrl: "https://x.com/AkifEsas",
     },
     {
-      name: "David Chen",
-      role: "Documentation Lead",
-      avatarUrl: "/assets/images/team/david.jpg",
-      githubUrl: "https://github.com/davidc",
-      linkedinUrl: "https://linkedin.com/in/davidchen",
-      twitterUrl: "https://twitter.com/davidc",
-    },
-    {
-      name: "Sarah Williams",
-      role: "Community Outreach",
-      avatarUrl: "/assets/images/team/sarah.jpg",
-      githubUrl: "https://github.com/sarahw",
-      linkedinUrl: "https://linkedin.com/in/sarahwilliams",
-      twitterUrl: "https://twitter.com/sarahw",
-    },
-    {
-      name: "James Wilson",
-      role: "Education Lead",
-      avatarUrl: "/assets/images/team/james.jpg",
-      githubUrl: "https://github.com/jamesw",
-      linkedinUrl: "https://linkedin.com/in/jameswilson",
-      twitterUrl: "https://twitter.com/jamesw",
+      name: "Fatih Gök",
+      role: "Game Tester, Bug Fixer",
+      avatarUrl: "developer-profile-photos/fatihgok.png",
+      githubUrl: "https://github.com/painoyunda",
+      linkedinUrl: "",
+      twitterUrl: "",
     },
   ];
 
   joinHeader: string = "Join Our Community";
   joinText: string =
-    "We're always looking for passionate individuals to join our community. Whether you're a developer, designer, writer, or just enthusiastic about open source, there's a place for you here.";
+    "We're always looking for passionate individuals to join us. Whether you're a developer, designer, writer, or simply enthusiastic about open-source, there's a place for you here.";
   waysToContribute: Array<string> = [
-    "Contribute code to our open source projects",
+    "Contribute code to our open-source projects",
     "Help improve our documentation",
     "Report bugs and suggest features",
     "Translate our resources into different languages",

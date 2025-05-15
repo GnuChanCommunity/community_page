@@ -91,7 +91,7 @@
     </div>
     <div class="section-content values-grid">
       <div *ngFor="let value of aboutData.values" class="value-item">
-        <mat-icon>{{ value.icon }}</mat-icon>
+        <i class={{value.icon}}></i>
         <h3 class="value-title">{{ value.title }}</h3>
         <p>{{ value.description }}</p>
       </div>

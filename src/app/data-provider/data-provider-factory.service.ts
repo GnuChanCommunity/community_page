@@ -19,6 +19,10 @@ import { AboutUsDataEnService } from "./providers/aboutus-data-en";
 import { IProjectData } from "./models/i-projects-data";
 import { ProjectDataTrService } from "./providers/project-data-tr";
 import { ProjectDataEnService } from "./providers/project-data-en";
+import { ISponsorshipsData } from "./models/-sponsorships-data";
+import { SponsorshipsDataTrService } from "./providers/sponsorships-data-tr";
+import { SponsorshipsDataEnService } from "./providers/sponsorships-data-en";
+import { UniversalDataProvider } from "./providers/universal-data-provider";
 
 // @Injectable() decorator marks this class as a service that can be injected
 // and can have its own dependencies injected.
@@ -78,6 +82,18 @@ export class DataProviderFactoryService {
     return this.language === "tr"
       ? inject(ProjectDataTrService)
       : inject(ProjectDataEnService);
+  }
+
+  getSponsorshipsData(): ISponsorshipsData
+  {
+    return this.language == "tr"
+      ? inject(SponsorshipsDataTrService)
+      : inject(SponsorshipsDataEnService);
+  }
+
+  getUniversalDataProvider(): UniversalDataProvider
+  {
+    return inject(UniversalDataProvider);
   }
 
   getFooterData(): IFooterData {

@@ -8,12 +8,12 @@
 
       <div class="filter-container">
         <mat-form-field appearance="outline">
-          <mat-label>Kategori Filtrele</mat-label>
+          <mat-label>Filters</mat-label>
           <mat-select
             [(value)]="selectedCategory"
             (selectionChange)="filterProjects()"
           >
-            <mat-option value="all">Tümü</mat-option>
+            <mat-option value="all">All</mat-option>
             <mat-option
               *ngFor="let category of projectData.categories"
               [value]="category"
@@ -23,7 +23,7 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Arama</mat-label>
+          <mat-label>Search</mat-label>
           <input
             matInput
             placeholder="Proje ara..."
@@ -58,6 +58,7 @@
         <div
           *ngFor="let project of filteredProjects.featured"
           class="featured-project-card"
+          [routerLink]="['/project', project.id]"
         >
           <div
             class="project-image"
@@ -93,6 +94,7 @@
                 target="_blank"
                 rel="noopener"
                 class="project-link"
+                (click)="$event.stopPropagation()"
               >
                 <mat-icon>code</mat-icon>
                 Repo
@@ -103,6 +105,7 @@
                 target="_blank"
                 rel="noopener"
                 class="project-link"
+                (click)="$event.stopPropagation()"
               >
                 <mat-icon>visibility</mat-icon>
                 Demo
@@ -113,9 +116,17 @@
                 target="_blank"
                 rel="noopener"
                 class="project-link"
+                (click)="$event.stopPropagation()"
               >
                 <mat-icon>library_books</mat-icon>
                 Docs
+              </a>
+              <a 
+                [routerLink]="['/project', project.id]" 
+                class="project-link view-details"
+              >
+                <mat-icon>info</mat-icon>
+                Detaylar
               </a>
             </div>
           </div>
@@ -210,6 +221,13 @@
                 >
                   <mat-icon>library_books</mat-icon>
                   Docs
+                </a>
+                <a 
+                  [routerLink]="['/project', project.id]" 
+                  class="project-link view-details"
+                >
+                  <mat-icon>info</mat-icon>
+                  Detaylar
                 </a>
               </div>
             </div>

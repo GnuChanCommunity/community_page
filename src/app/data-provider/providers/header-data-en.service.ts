@@ -8,7 +8,7 @@ export class HeaderDataEnService implements IHeaderData {
     { label: "Home", path: "/home" },
     { label: "AboutUs", path: "/about" },
     { label: "Projects", path: "/projects" },
-    { label: "Contributors", path: "/contributors" },
+    { label: "Sponsorships", path: "/contributors" },
     { label: "Contact", path: "/contact" },
   ];
 }

@@ -1,0 +1,108 @@
+<div class="project-container">
+  <!-- Project Not Found -->
+  <div *ngIf="notFound" class="not-found-container">
+    <mat-card>
+      <mat-card-content>
+        <h2>Project Not Found</h2>
+        <p>The project with ID "{{ projectId }}" could not be found.</p>
+        <button mat-raised-button color="primary" routerLink="/projects">
+          <mat-icon>arrow_back</mat-icon> Back to Projects
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Project Details -->
+  <div *ngIf="project" class="project-details">
+    <!-- Project Header -->
+    <div class="project-header">
+      <div class="header-content">
+        <h1>{{ project.title }}</h1>
+        <div class="project-category">
+          <mat-chip color="primary" selected>{{ project.category }}</mat-chip>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a *ngIf="project.repoUrl" mat-raised-button color="accent" [href]="project.repoUrl" target="_blank">
+          <mat-icon>code</mat-icon> GitHub Repository
+        </a>
+        <a *ngIf="project.demoUrl" mat-raised-button color="primary" [href]="project.demoUrl" target="_blank">
+          <mat-icon>play_arrow</mat-icon> Live Demo
+        </a>
+      </div>
+    </div>
+
+    <!-- Project Image -->
+    <div class="project-image" *ngIf="project.imageUrl">
+      <img [src]="project.imageUrl" [alt]="project.title">
+    </div>
+
+    <!-- Main Content -->
+    <mat-card class="project-card">
+      <mat-card-content>
+        <mat-tab-group animationDuration="200ms">
+          <!-- Overview Tab -->
+          <mat-tab label="Overview">
+            <div class="tab-content">
+              <h2>Project Description</h2>
+              <p>{{ project.description }}</p>
+
+              <mat-divider></mat-divider>
+
+              <!-- Technologies -->
+              <h3>Technologies</h3>
+              <div class="technologies-container">
+                <mat-chip-listbox>
+                  <mat-chip *ngFor="let tech of project.technologies">{{ tech }}</mat-chip>
+                </mat-chip-listbox>
+              </div>
+
+              <mat-divider></mat-divider>
+
+              <!-- Key Achievements -->
+              <h3>Key Achievements</h3>
+              <ul class="achievements-list">
+                <li *ngFor="let achievement of project.achievements">
+                  <mat-icon color="accent">check_circle</mat-icon>
+                  <span>{{ achievement }}</span>
+                </li>
+              </ul>
+
+              <!-- Project Stats -->
+              <mat-divider></mat-divider>
+              <h3>Project Statistics</h3>
+              <div class="project-stats">
+                <div class="stat-item">
+                  <mat-icon color="primary">people</mat-icon>
+                  <span>{{ project.contributors }} Contributors</span>
+                </div>
+                <div class="stat-item">
+                  <mat-icon color="primary">calendar_today</mat-icon>
+                  <span>Completed: {{ getCompletionDate(project.completionDate) | date:'mediumDate' }}</span>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+
+          <!-- Documentation Tab -->
+          <mat-tab label="Documentation" *ngIf="project.docsUrl">
+            <div class="tab-content">
+              <h2>Documentation</h2>
+              <p>Visit our comprehensive documentation to learn more about this project.</p>
+              <a mat-raised-button color="primary" [href]="project.docsUrl" target="_blank">
+                <mat-icon>menu_book</mat-icon> View Documentation
+              </a>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Related Navigation -->
+    <div class="navigation-actions">
+      <button mat-raised-button color="primary" (click)="navigateToProjects()">
+        <mat-icon>arrow_back</mat-icon> Back to Projects
+      </button>
+    </div>
+  </div>
+</div>

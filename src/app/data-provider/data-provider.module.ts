@@ -11,6 +11,8 @@ import { AboutUsDataEnService } from "./providers/aboutus-data-en";
 import { AboutUsDataTrService } from "./providers/aboutus-data-tr";
 import { ProjectDataEnService } from "./providers/project-data-en";
 import { ProjectDataTrService } from "./providers/project-data-tr";
+import { SponsorshipsDataTrService } from "./providers/sponsorships-data-tr";
+import { SponsorshipsDataEnService } from "./providers/sponsorships-data-en";
 
 @NgModule({
   providers: [
@@ -23,6 +25,8 @@ import { ProjectDataTrService } from "./providers/project-data-tr";
     AboutUsDataTrService,
     ProjectDataEnService,
     ProjectDataTrService,
+    SponsorshipsDataTrService,
+    SponsorshipsDataEnService,
     FooterDataEnService,
     FooterDataTrService,
   ],

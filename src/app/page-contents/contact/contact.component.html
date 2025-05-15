@@ -1,1 +1,54 @@
-<p>contact works!</p>
+<section class="contact-section">
+    <mat-card class="contact-card">
+      <mat-card-header>
+        <mat-card-title>İletişime Geçin</mat-card-title>
+        <mat-card-subtitle>Sorularınız veya işbirliği teklifleriniz için bize ulaşın.</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngIf="universalDataProvider.contactEmail">
+            <mat-icon matListItemIcon color="primary">email</mat-icon>
+            <div matListItemTitle>E-posta</div>
+            <div matListItemLine>
+              <a [href]="'mailto:' + universalDataProvider.contactEmail">{{ universalDataProvider.contactEmail }}</a>
+            </div>
+          </mat-list-item>
+  
+          <mat-list-item role="listitem" *ngIf="universalDataProvider.contactPhone">
+            <mat-icon matListItemIcon color="primary">phone</mat-icon>
+            <div matListItemTitle>Telefon</div>
+            <div matListItemLine>
+              <a [href]="'tel:' + universalDataProvider.contactPhone">{{ universalDataProvider.contactPhone }}</a>
+            </div>
+          </mat-list-item>
+  
+          <mat-list-item role="listitem" *ngIf="universalDataProvider.websiteUrl">
+            <mat-icon matListItemIcon color="primary">language</mat-icon>
+            <div matListItemTitle>Web Sitesi</div>
+            <div matListItemLine>
+              <a [href]="universalDataProvider.websiteUrl" target="_blank" rel="noopener noreferrer">{{ universalDataProvider.websiteUrl }}</a>
+            </div>
+          </mat-list-item>
+        </mat-list>
+  
+        <mat-divider class="contact-divider"></mat-divider>
+  
+        <h1 class="social-title">Sosyal Medyada Bizi Takip Edin</h1>
+        <div class="social-links">
+          <a mat-icon-button [href]="universalDataProvider.githubUrl" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profilimiz" *ngIf="universalDataProvider.githubUrl">
+            <i class="fab fa-github"></i>
+          </a>
+          <a mat-icon-button [href]="universalDataProvider.linkedinUrl" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profilimiz" *ngIf="universalDataProvider.linkedinUrl">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a mat-icon-button [href]="universalDataProvider.twitterUrl" target="_blank" rel="noopener noreferrer" aria-label="Twitter Hesabımız" *ngIf="universalDataProvider.twitterUrl">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a mat-icon-button [href]="universalDataProvider.revoltAdress" target="_blank" rel="noopener noreferrer" aria-label="Discord Sunucumuz" *ngIf="universalDataProvider.discordUrl">
+            <i class="fab fa-discord"></i>
+          </a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>

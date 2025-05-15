@@ -6,18 +6,21 @@ import { IAboutUsData } from "../models/i-aboutus-data";
  */
 @Injectable()
 export class AboutUsDataTrService implements IAboutUsData {
-  communityName: string = "Açık Kaynak Topluluğu";
-  communityTagline: string = "Geleceği birlikte inşa ediyoruz";
+  communityName: string = "GnuChan Topluluk";
+  communityTagline: string = "Açık kaynak projelerimizle Türk açık kaynak ekosistemini birlikte inşa ediyoruz.";
   missionStatement: string =
-    "Dünya genelindeki geliştiricileri ve kullanıcıları güçlendiren erişilebilir, yenilikçi yazılım çözümleri yaratmak.";
+    "Dünya genelindeki geliştiriciler ve kullanıcılar için erişilebilir, yenilikçi ve etkili yazılım çözümleri üretmek.";
+
 
   storyHeader: string = "Hikayemiz";
   storyParagraphs: Array<string> = [
-    "2020 yılında kurulan topluluğumuz, açık işbirliğinin gücüne inanan tutkulu bir geliştirici grubu olarak başladı.",
-    "Arkadaşlar arasında bir hafta sonu projesi olarak başlayan girişimimiz, kısa sürede ortak vizyonumuzla birleşen küresel bir katılımcı topluluğuna dönüştü.",
-    "Bugün, 30'dan fazla ülkeden üyemizle gurur duyuyoruz; hep birlikte teknolojiyi herkes için daha erişilebilir ve güçlü kılan araçlar geliştiriyoruz.",
-    "Yolculuğumuz, yarattığımız her şeyde şeffaflık, kapsayıcılık ve mükemmellik ilkeleriyle tanımlanmıştır.",
+    "Topluluğumuz 2025 yılında, YouTube üzerinden tanışan bir grup geliştiricinin bir araya gelmesiyle kuruldu.",
+    "İlk projemiz, bağımsız olarak yayınladığımız 'The Arena: Last Shooter' adlı bir itchio oyunuydu. Bu proje, ortak üretim tutkumuzun ilk somut meyvesiydi.",
+    "Ekibin ilk üyeleri bugün hâlâ aramızda olan çekirdek geliştirici kadrosudur. Bu kadro, zamanla sadece teknik değil, aynı zamanda güçlü bir dostluk ağına dönüştü.",
+    "Birlikte çalıştıkça gördük ki, tutkuyla üretilen projeler sadece bireysel doyum değil, aynı zamanda sürdürülebilir bir yaşam biçimi de sağlayabilir.",
+    "Bu yolda ilerlerken Türkiye'de açık kaynak kültürünü ve geliştirici topluluklarını yaygınlaştırmak, herkesin katkı sunabileceği bir ekosistem inşa etmek öncelikli hedeflerimizden biri haline geldi."
   ];
+
 
   valuesHeader: string = "Temel Değerlerimiz";
   values: Array<{
@@ -25,37 +28,37 @@ export class AboutUsDataTrService implements IAboutUsData {
     title: string;
     description: string;
   }> = [
-    {
-      icon: "fa-lightbulb",
-      title: "Yenilikçilik",
-      description:
-        "Sürekli olarak sınırları zorluyor ve karmaşık sorunları çözmek için yeni yaklaşımlar keşfediyoruz.",
-    },
-    {
-      icon: "fa-users",
-      title: "İşbirliği",
-      description:
-        "En iyi çözümlerin, farklı zihinler ortak hedefler doğrultusunda birlikte çalıştığında ortaya çıktığına inanıyoruz.",
-    },
-    {
-      icon: "fa-lock-open",
-      title: "Açıklık",
-      description:
-        "Kodumuzda, süreçlerimizde ve topluluk etkileşimlerimizde şeffaflığı benimsiyoruz.",
-    },
-    {
-      icon: "fa-universal-access",
-      title: "Kapsayıcılık",
-      description:
-        "Her geçmişten ve beceri düzeyinden geliştiriciler için sıcak bir ortam yaratmaya kararlıyız.",
-    },
-    {
-      icon: "fa-certificate",
-      title: "Kalite",
-      description:
-        "Kodumuzda, belgelendirmemizde ve topluluk desteğimizde yüksek standartları koruyoruz.",
-    },
-  ];
+      {
+        icon: "fa-solid fa-lightbulb",
+        title: "Yenilikçilik",
+        description:
+          "Sürekli olarak sınırları zorluyor ve karmaşık sorunları çözmek için yeni yaklaşımlar keşfediyoruz.",
+      },
+      {
+        icon: "fa-solid fa-handshake",
+        title: "İşbirliği",
+        description:
+          "En iyi çözümlerin, farklı zihinler ortak hedefler doğrultusunda birlikte çalıştığında ortaya çıktığına inanıyoruz.",
+      },
+      {
+        icon: "fa-solid fa-magnifying-glass",
+        title: "Açıklık",
+        description:
+          "Kodumuzda, süreçlerimizde ve topluluk etkileşimlerimizde şeffaflığı benimsiyoruz.",
+      },
+      {
+        icon: "fa-solid fa-universal-access",
+        title: "Kapsayıcılık",
+        description:
+          "Her geçmişten ve beceri düzeyinden geliştiriciler için sıcak bir ortam yaratmaya kararlıyız.",
+      },
+      {
+        icon: "fa-solid fa-certificate",
+        title: "Kalite",
+        description:
+          "Kodumuzda, belgelendirmemizde ve topluluk desteğimizde yüksek standartları koruyoruz.",
+      },
+    ];
 
   teamHeader: string = "Ekibimizle Tanışın";
   teamIntro: string =
@@ -68,47 +71,31 @@ export class AboutUsDataTrService implements IAboutUsData {
     linkedinUrl: string;
     twitterUrl: string;
   }> = [
-    {
-      name: "Alex Johnson",
-      role: "Topluluk Lideri",
-      avatarUrl: "/assets/images/team/alex.jpg",
-      githubUrl: "https://github.com/alexj",
-      linkedinUrl: "https://linkedin.com/in/alexjohnson",
-      twitterUrl: "https://twitter.com/alexj",
-    },
-    {
-      name: "Maria Garcia",
-      role: "Teknik Lider",
-      avatarUrl: "/assets/images/team/maria.jpg",
-      githubUrl: "https://github.com/mariagarcia",
-      linkedinUrl: "https://linkedin.com/in/mariagarcia",
-      twitterUrl: "https://twitter.com/mariagarcia",
-    },
-    {
-      name: "David Chen",
-      role: "Belgelendirme Lideri",
-      avatarUrl: "/assets/images/team/david.jpg",
-      githubUrl: "https://github.com/davidc",
-      linkedinUrl: "https://linkedin.com/in/davidchen",
-      twitterUrl: "https://twitter.com/davidc",
-    },
-    {
-      name: "Sarah Williams",
-      role: "Topluluk İletişimi",
-      avatarUrl: "/assets/images/team/sarah.jpg",
-      githubUrl: "https://github.com/sarahw",
-      linkedinUrl: "https://linkedin.com/in/sarahwilliams",
-      twitterUrl: "https://twitter.com/sarahw",
-    },
-    {
-      name: "James Wilson",
-      role: "Eğitim Lideri",
-      avatarUrl: "/assets/images/team/james.jpg",
-      githubUrl: "https://github.com/jamesw",
-      linkedinUrl: "https://linkedin.com/in/jameswilson",
-      twitterUrl: "https://twitter.com/jamesw",
-    },
-  ];
+      {
+        name: "Kubilay Yalçın",
+        role: "Topluluk Lideri, 3D Modelleme, Game Developer",
+        avatarUrl: "developer-profile-photos/kubi.png",
+        githubUrl: "https://github.com/gnuchanos",
+        linkedinUrl: "https://www.linkedin.com/in/kubilay-yalcin-5b0233292/",
+        twitterUrl: "",
+      },
+      {
+        name: "Akif Esad Tosun",
+        role: "Teknik Lider, Web Developer, Game Developer",
+        avatarUrl: "developer-profile-photos/akif.jpg",
+        githubUrl: "https://github.com/Akif-jpg",
+        linkedinUrl: "https://www.linkedin.com/in/akif-tosun-81b205340/",
+        twitterUrl: "https://x.com/AkifEsas",
+      },
+      {
+        name: "Fatih Gök",
+        role: "Game Tester, bug fixer",
+        avatarUrl: "developer-profile-photos/fatihgok.png",
+        githubUrl: "https://github.com/painoyunda",
+        linkedinUrl: "",
+        twitterUrl: "",
+      },
+    ];
 
   joinHeader: string = "Topluluğumuza Katılın";
   joinText: string =

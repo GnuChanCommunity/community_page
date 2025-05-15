@@ -1,141 +1,336 @@
+/* --- Genel Stil Ayarları --- */
+body {
+  /* Sayfanın genel yazı tipi ailesini belirleyebilirsiniz */
+  /* font-family: 'Roboto', sans-serif; */
+}
+
+/* --- Destekçiler Bölümü (Supporters Section) --- */
 .supporters-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 24px;
+  background-color: #f3e5f5; /* Açık mor tonu - Güzel */
+  color: #6a1b9a; /* Ana metin rengini biraz daha açık bir mor yaptık */
 }
 
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+.supporters-section h2,
+.supporters-section h3 {
+  color: #8e24aa; /* Başlıklar için biraz daha canlı bir mor */
+  margin-bottom: 16px;
 }
 
-.section-description {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.supporters-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.supporter-card {
-  background-color: #f9f9f9;
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
-}
-
-.supporter-card:hover {
-  transform: translateY(-4px);
-}
-
-.avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-.supporter-name {
-  font-size: 1.25rem;
-  margin: 0.25rem 0;
-}
-
-.supporter-role {
-  color: #007acc;
-  font-weight: bold;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-}
-
-.supporter-bio {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-.supporter-tags {
-  margin-bottom: 1rem;
-}
-
-.tag {
-  background-color: #e0e0e0;
-  color: #333;
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  border-radius: 12px;
-  margin: 0 5px 5px 0;
-  display: inline-block;
-}
-
-.supporter-links a {
-  margin: 0 8px;
-  font-size: 0.85rem;
-  color: #007acc;
-  text-decoration: none;
-}
-
-.supporter-links a:hover {
-  text-decoration: underline;
-}
-
-.join-section {
-  border-top: 1px solid #ddd;
-  padding-top: 2rem;
-}
-
-.join-button {
-  display: inline-block;
-  background-color: #007acc;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 1rem;
-  transition: background-color 0.2s ease;
-}
-
-.join-button:hover {
-  background-color: #005f99;
-}
-.supporters-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+.supporters-section p {
+  color: #6a1b9a; /* Paragraf metni için ana mor rengi */
+  max-width: 800px;
+  margin-bottom: 32px;
 }
 
 .supporters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 24px;
+  margin-bottom: 48px;
 }
 
 .supporter-card {
-  border-radius: 12px;
+  background-color: #ffffff; /* Kart arka planını beyaz yaptık, daha temiz durur */
+  border: 1px solid #e1bee7; /* Hafif mor bir çerçeve ekledik */
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(106, 27, 154, 0.1); /* Gölgeyi hafiflettik */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #6a1b9a; /* Kart içindeki varsayılan metin rengi */
+}
+
+.supporter-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(106, 27, 154, 0.2); /* Hover gölgesini biraz belirginleştirdik */
 }
 
 .avatar-container img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  object-fit: cover;
+  border: 2px solid #ce93d8; /* Avatar çerçevesi */
 }
 
+/* Angular Material Kart Bileşenleri için Stiller */
+.supporter-card mat-card-title {
+  font-weight: bold;
+  color: #8e24aa; /* Kart başlığı rengi */
+}
+
+.supporter-card mat-card-subtitle {
+  color: #ab47bc; /* Kart alt başlığı rengi (daha açık mor) */
+}
+
+.supporter-card mat-card-content p {
+  margin-top: 8px;
+  color: #6a1b9a; /* Kart içeriği metin rengi */
+}
+
+.supporter-card mat-chip-set {
+  margin-top: 12px;
+}
+
+.supporter-card mat-chip {
+  margin: 4px;
+  background-color: #e1bee7 !important; /* Daha açık mor çip arka planı */
+  color: #6a1b9a; /* Çip metin rengi */
+  font-weight: 500;
+}
+
+.supporter-card mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 16px;
+}
+
+.supporter-card mat-icon {
+  color: #8e24aa; /* İkon rengi */
+  transition: color 0.3s ease;
+}
+
+.supporter-card a[mat-icon-button]:hover mat-icon {
+  color: #ab47bc; /* Hover ikon rengi */
+}
+
+/* --- Bölüm Ayırıcı --- */
 .section-divider {
-  margin: 3rem 0 2rem;
+  margin: 48px auto; /* Ortalamak için auto ekledik */
+  width: 80%; /* Genişliği biraz kıstık */
+  max-width: 800px; /* Maksimum genişlik belirledik */
+  height: 1px; /* Daha ince bir çizgi */
+  background-color: #ce93d8; /* Daha açık mor ayırıcı */
+  border: none; /* Varsayılan border'ı kaldırdık */
 }
 
+/* --- Katılma Bölümü --- */
 .join-section {
   text-align: center;
-  margin-top: 2rem;
+  padding: 24px 0; /* Üst ve alt padding */
+  background-color: #ffffff; /* Arka plan beyaz */
 }
+
+.join-section h3 { /* Eğer bir başlık varsa stil ekleyelim */
+ color: #8e24aa;
+ margin-bottom: 16px;
+}
+
+.join-section p { /* Eğer bir açıklama varsa stil ekleyelim */
+ color: #6a1b9a;
+ margin-bottom: 24px;
+}
+
+.join-section a[mat-raised-button] {
+  margin-top: 16px;
+  background-color: #8e24aa; /* Ana mor tonu */
+  color: #ffffff; /* Beyaz yazı */
+  padding: 12px 24px; /* Buton iç boşluğunu ayarladık */
+  border-radius: 25px; /* Daha yuvarlak köşeler */
+}
+
+.join-section a[mat-raised-button]:hover {
+  background-color: #ab47bc; /* Hover için daha açık mor */
+}
+
+/* --- Sponsorluklar Bölümü (Sponsorships Section) --- */
+.sponsorships-section {
+  padding: 40px 24px;
+  background-color: #ffffff; /* Beyaz arka plan */
+  color: #6a1b9a; /* Varsayılan metin rengi */
+}
+
+.sponsorships-section .header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sponsorships-section .header h2 {
+  color: #8e24aa; /* Başlık rengi */
+  /* mat-display-1 Angular Material sınıfı, gerekirse font boyutunu buradan ayarlayabilirsiniz */
+  /* font-size: 34px; */
+  margin-bottom: 16px;
+}
+
+.sponsorships-section .header p {
+  color: #6a1b9a; /* Giriş metni rengi */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  /* mat-body-1 Angular Material sınıfı, gerekirse font boyutunu buradan ayarlayabilirsiniz */
+  /* font-size: 14px; */
+  /* line-height: 20px; */
+}
+
+.sponsorships-section .tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.sponsorships-section .tier-card {
+  background-color: #f3e5f5; /* Katman kartları için açık mor arka plan */
+  border: 1px solid #e1bee7;
+  border-radius: 16px;
+  color: #6a1b9a; /* Kart içi metin rengi */
+  box-shadow: 0 2px 8px rgba(106, 27, 154, 0.1);
+}
+
+.sponsorships-section .tier-card mat-card-header {
+  padding-bottom: 8px;
+}
+
+.sponsorships-section .tier-card mat-card-title {
+  color: #8e24aa; /* Katman adı rengi */
+}
+
+.sponsorships-section .tier-card mat-card-subtitle {
+  color: #ab47bc; /* Katman açıklaması rengi */
+}
+
+.sponsorships-section .tier-card mat-card-content .amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8e24aa; /* Miktar rengi */
+  margin-bottom: 16px;
+}
+
+.sponsorships-section .tier-card mat-card-content ul {
+  list-style: none; /* Liste işaretlerini kaldır */
+  padding: 0;
+  margin: 0;
+}
+
+.sponsorships-section .tier-card mat-card-content ul li {
+  margin-bottom: 8px;
+  padding-left: 20px; /* İkon için yer aç */
+  position: relative;
+  color: #6a1b9a; /* Fayda metni rengi */
+}
+
+/* Liste başına küçük bir ikon ekleyelim (Material Icons kullanılıyorsa) */
+.sponsorships-section .tier-card mat-card-content ul li::before {
+  content: 'check_circle'; /* Veya istediğiniz başka bir ikon: star, done vb. */
+  font-family: 'Material Icons';
+  position: absolute;
+  left: 0;
+  top: 1px; /* Dikey hizalama */
+  font-size: 16px;
+  color: #ab47bc; /* İkon rengi */
+}
+
+/* --- Mevcut Sponsorlar Bölümü --- */
+.sponsors-section {
+  margin-top: 48px; /* Üstteki ayırıcıdan sonra boşluk */
+  text-align: center; /* İçeriği ortala */
+}
+
+.sponsors-section h3 {
+  color: #8e24aa; /* Başlık rengi */
+  margin-bottom: 32px; /* Başlık altı boşluk */
+  /* mat-headline-5 Angular Material sınıfı */
+  /* font-size: 24px; */
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Daha küçük kartlar için */
+  gap: 24px;
+  justify-items: center; /* Izgara elemanlarını yatayda ortala */
+  margin-bottom: 48px;
+}
+
+.sponsor-card {
+  background-color: #ffffff; /* Beyaz kart arka planı */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(106, 27, 154, 0.1);
+  padding: 16px;
+  text-align: center; /* Kart içeriğini ortala */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 200px; /* Kart genişliğini sabitleyebiliriz */
+  border: 1px solid #e1bee7; /* Hafif çerçeve */
+}
+.sponsor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(106, 27, 154, 0.2);
+}
+
+.sponsor-card img[mat-card-image] { /* mat-card-image direktifine sahip img */
+  max-width: 120px; /* Logo boyutu */
+  height: auto;
+  margin: 0 auto 16px auto; /* Ortala ve altta boşluk bırak */
+  display: block; /* Ortalamak için */
+}
+
+.sponsor-card mat-card-content h4 {
+  color: #8e24aa; /* Sponsor adı rengi */
+  font-size: 16px; /* Biraz daha küçük */
+  margin-bottom: 4px;
+}
+
+.sponsor-card mat-card-content p {
+  color: #6a1b9a; /* Sponsor tagline rengi */
+  font-size: 13px; /* Daha küçük */
+  /* mat-body-2 Angular Material sınıfı */
+  line-height: 1.4;
+  min-height: 3.6em; /* Tagline için yer ayır (yaklaşık 2-3 satır) */
+}
+
+.sponsor-card mat-card-actions {
+  padding: 8px 0 0 0; /* Üstte padding, diğerleri sıfır */
+  display: flex; /* İçeriği flex ile yönet */
+  justify-content: center; /* Butonu ortala */
+}
+
+.sponsor-card a[mat-button] {
+  color: #8e24aa; /* Buton metin rengi */
+  padding: 4px 12px; /* Buton boyutunu ayarla */
+  font-size: 13px; /* Buton yazı boyutu */
+}
+.sponsor-card a[mat-button]:hover {
+    background-color: rgba(142, 36, 170, 0.1); /* Hafif mor hover efekti */
+}
+
+/* --- Harekete Geçirici Mesaj (CTA) --- */
+.cta {
+  text-align: center;
+  background-color: #f3e5f5; /* Açık mor arka plan */
+  padding: 32px 24px;
+  border-radius: 12px;
+  margin-top: 48px; /* Üst bölümden boşluk */
+}
+
+.cta h3 {
+  color: #8e24aa; /* Başlık rengi */
+  margin-bottom: 16px;
+  /* mat-headline-6 Angular Material sınıfı */
+  /* font-size: 20px; */
+}
+
+.cta p {
+  color: #6a1b9a; /* Metin rengi */
+  max-width: 600px;
+  margin: 0 auto 24px auto; /* Ortala ve altta boşluk */
+  /* mat-body-1 Angular Material sınıfı */
+}
+
+.cta a[mat-raised-button] {
+  background-color: #8e24aa; /* Buton rengi */
+  color: #ffffff; /* Beyaz yazı */
+  padding: 12px 24px;
+  border-radius: 25px; /* Yuvarlak köşeler */
+  /* color="accent" Angular Material'da tema rengini kullanır, CSS ile ezdik */
+}
+
+.cta a[mat-raised-button]:hover {
+  background-color: #ab47bc; /* Hover rengi */
+}
+
+/* --- (İsteğe Bağlı) Genel Link Rengi --- */
+a {
+    /* Genel link rengini tema ile uyumlu yapabilirsiniz */
+    /* color: #8e24aa; */
+    /* text-decoration: none; */ /* Alt çizgiyi kaldır */
+}
+/* a:hover { */
+    /* text-decoration: underline; */ /* Hover'da alt çizgi ekle */
+/* } */

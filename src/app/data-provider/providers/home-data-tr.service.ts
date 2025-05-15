@@ -1,11 +1,14 @@
-import { Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { IHomeData } from "../models/i-home-data";
+import { UniversalDataProvider } from "./universal-data-provider";
 
 @Injectable()
 export class HomeDataTrService implements IHomeData {
+  universalDataProvider: UniversalDataProvider = inject(UniversalDataProvider);
   name = "Gnuchan Açık Kaynak Topluluğu";
   title = "Özgür Yazılımın Gücüyle Ortak Akıl ve Geliştirme";
-  email = "Bizim komunitenin email adresi";
+  email = this.universalDataProvider.contactEmail;
+  revolt: string = this.universalDataProvider.revoltAdress;
   phone = "Topluluk İletişim Kanallarımız (Discord, Forum vb.)";
   location = "Çevrimiçi ve Küresel Erişim";
   github = "https://github.com/gnuchan-community-example";
@@ -60,28 +63,10 @@ export class HomeDataTrService implements IHomeData {
    */
   projects = [
     {
-      title: "Gnuchan Görev Takip Sistemi",
-      technologies: "Python, Django, PostgreSQL, Docker",
+      title: "The Last Arena Shoter",
+      technologies: "Unity 2022.3.62f1",
       description:
-        "Topluluk içi görevlerin ve katkıların şeffaf bir şekilde takip edilmesini sağlayan, web tabanlı açık kaynak platform.",
-    },
-    {
-      title: "Açık Belgelendirme Girişimi",
-      technologies: "Markdown, Sphinx, GitHub Pages",
-      description:
-        "Farklı açık kaynak projeler için topluluk tarafından hazırlanan detaylı teknik belgelerin merkezi deposu ve yayın platformu.",
-    },
-    {
-      title: "Eğitim Kaynakları Kütüphanesi",
-      technologies: "Çeşitli (teknolojiye özel değil)",
-      description:
-        "Topluluk üyelerinin düzenlediği atölye, sunum ve eğitim materyallerinin toplandığı ve kolayca erişilebilir kılındığı dijital kütüphane.",
-    },
-    {
-      title: "Çekirdek Kütüphanelere Katkı",
-      technologies: "Proje bağımlı (Java, Python, C++ vb.)",
-      description:
-        "Çeşitli popüler açık kaynak projelerin (örn: Linux çekirdeği, Spring, Django) temel kütüphanelerine yapılan düzenli hata düzeltmeleri ve özellik katkıları.",
+        "Topluluk olarak ilk geliştirdiğimiz proje, basit bir arena shoter oyunu.",
     },
   ];
 }

@@ -10,6 +10,7 @@ export interface IHomeData {
   title: string;
   email: string;
   phone: string;
+  revolt: string;
   location: string;
   github: string;
   linkedin: string;
