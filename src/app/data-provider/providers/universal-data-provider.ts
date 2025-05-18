@@ -10,7 +10,7 @@ export class UniversalDataProvider {
   // Social media URLs
   private readonly _githubUrl: string = "https://github.com/GnuChanCommunity";
   private readonly _linkedinUrl: string = "https://linkedin.com/in/yourprofile";
-  private readonly _twitterUrl: string = "https://twitter.com/yourhandle";
+  private readonly _twitterUrl: string = "https://bsky.app/profile/gnuchancommunity.bsky.social";
   private readonly _discordUrl: string = "https://app.revolt.chat/server/01J9RWW0CVA8GA1BR6ZRYPVN5F/channel/01J9RWW0CVY9YF01YC6PE78JGZ";
   private readonly _youtubeUrl: string = "https://www.youtube.com/@GnuChanOS";
 
